@@ -17,11 +17,17 @@ another way. This is the way of IO also."
 
 ## readable
 
+### pause / resume / drain
+
 ## writable
 
 ## pipe
 
 ## backpressure
+
+## destroy
+
+## stream-spec
 
 ***
 
@@ -45,11 +51,15 @@ another way. This is the way of IO also."
 
 ## through
 
+## from
+
 ## pause-stream
 
 ## concat-stream
 
 ## duplex
+
+## duplexer
 
 ## mux-demux
 
@@ -60,6 +70,12 @@ another way. This is the way of IO also."
 ## map-stream
 
 ## remote-events
+
+## buffer-stream
+
+## event-stream
+
+## auth-stream
 
 ***
 
@@ -79,6 +95,8 @@ another way. This is the way of IO also."
 
 ## kv
 
+## discovery-network (relay stream)
+
 ***
 
 # parser streams
@@ -91,7 +109,7 @@ another way. This is the way of IO also."
 
 ## json-scrape
 
-## trumpet
+## stream-serializer
 
 ***
 
@@ -107,6 +125,10 @@ another way. This is the way of IO also."
 
 ## arrow-keys
 
+## attribute
+
+## data-bind
+
 ***
 
 # rpc streams
@@ -120,3 +142,13 @@ another way. This is the way of IO also."
 # test streams
 
 ## tap
+
+## stream-spec
+
+***
+
+# stream abstractions
+
+## stream-router
+
+## multi-channel-mdm
