@@ -407,9 +407,17 @@ then input events will be line-buffered. You can turn off line-buffering by
 calling `process.stdin.setRawMode(true)` BUT the default handlers for key
 combinations such as `^C` and `^D` will be removed.
 
-### process.stdout
+### [process.stdout](http://nodejs.org/api/process.html#process_process_stdout)
 
-### process.stderr
+This writable stream contains the standard system output stream for your program.
+
+`write` to it if you want send data to stdout
+
+### [process.stderr](http://nodejs.org/api/process.html#process_process_stderr)
+
+This writable stream contains the standard system error stream for your program.
+
+`write` to it if you want send data to stderr
 
 ## child_process.spawn()
 
