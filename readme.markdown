@@ -456,49 +456,49 @@ until the `'connect'` event fires.
 
 # control streams
 
-## through
+## [through](https://github.com/dominictarr/through)
 
-## from
+## [from](https://github.com/dominictarr/from)
 
-## pause-stream
+## [pause-stream](https://github.com/dominictarr/pause-stream)
 
-## concat-stream
+## [concat-stream](https://github.com/maxogden/node-concat-stream)
 
-## duplex
+## [duplex](https://github.com/dominictarr/duplex)
 
-## duplexer
+## [duplexer](https://github.com/Raynos/duplexer)
 
-## emit-stream
+## [emit-stream](https://github.com/substack/emit-stream)
 
-## invert-stream
+## [invert-stream](https://github.com/dominictarr/invert-stream)
 
-## map-stream
+## [map-stream](https://github.com/dominictarr/map-stream)
 
-## remote-events
+## [remote-events](https://github.com/dominictarr/remote-events)
 
-## buffer-stream
+## [buffer-stream](https://github.com/Raynos/buffer-stream)
 
-## event-stream
+## [event-stream](https://github.com/dominictarr/event-stream)
 
-## auth-stream
+## [auth-stream](https://github.com/Raynos/auth-stream)
 
 ***
 
 # meta streams
 
-## mux-demux
+## [mux-demux](https://github.com/dominictarr/mux-demux)
 
-## stream-router
+## [stream-router](https://github.com/Raynos/stream-router)
 
-## multi-channel-mdm
+## [multi-channel-mdm](https://github.com/Raynos/multi-channel-mdm)
 
 ***
 
 # state streams
 
-## cdrt
+## [crdt](https://github.com/dominictarr/crdt)
 
-## delta-stream
+## [delta-stream](https://github.com/Raynos/delta-stream)
 
 ## [scuttlebutt](https://github.com/dominictarr/scuttlebutt)
 
@@ -672,31 +672,31 @@ symmetric protocol.
 
 # http streams
 
-## request
+## [request](https://github.com/mikeal/request)
 
-## filed
+## [filed](https://github.com/mikeal/filed)
 
-## oppressor
+## [oppressor](https://github.com/substack/oppressor)
 
-## response-stream
+## [response-stream](https://github.com/substack/response-stream)
 
 ***
 
 # io streams
 
-## reconnect
+## [reconnect](https://github.com/dominictarr/reconnect)
 
-## kv
+## [kv](https://github.com/dominictarr/kv)
 
-## discovery-network
+## [discovery-network](https://github.com/Raynos/discovery-network)
 
 ***
 
 # parser streams
 
-## tar
+## [tar](https://github.com/creationix/node-tar)
 
-## trumpet
+## [trumpet](https://github.com/substack/node-trumpet)
 
 ## [JSONStream](https://github.com/dominictarr/JSONStream)
 
@@ -706,9 +706,9 @@ If you need to pass a large json collection through a slow connection or you
 have a json object that will populate slowly this module will let you parse data
 incrementally as it arrives.
 
-## json-scrape
+## [json-scrape](https://github.com/substack/json-scrape)
 
-## stream-serializer
+## [stream-serializer](https://github.com/dominictarr/stream-serializer)
 
 ***
 
@@ -716,17 +716,17 @@ incrementally as it arrives.
 
 ## [shoe](https://github.com/substack/shoe)
 
-## domnode
+## [domnode](https://github.com/maxogden/domnode)
 
-## sorta
+## [sorta](https://github.com/substack/sorta)
 
-## graph-stream
+## [graph-stream](https://github.com/substack/graph-stream)
 
-## arrow-keys
+## [arrow-keys](https://github.com/Raynos/arrow-keys)
 
-## attribute
+## [attribute](https://github.com/Raynos/attribute)
 
-## data-bind
+## [data-bind](https://github.com/travis4all/data-bind)
 
 ***
 
@@ -864,15 +864,15 @@ functions defined anywhere and especially useful when paired up with
 [mux-demux](https://github.com/dominictarr/mux-demux) to multiplex an rpc stream
 for control alongside some bulk data streams.
 
-## rpc-stream
+## [rpc-stream](https://github.com/dominictarr/rpc-stream)
 
 ***
 
 # test streams
 
-## tap
+## [tap](https://github.com/isaacs/node-tap)
 
-## stream-spec
+## [stream-spec](https://github.com/dominictarr/stream-spec)
 
 ***
 
