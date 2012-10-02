@@ -370,6 +370,7 @@ you're probably dealing with a duplex stream.
 * [core stream documentation](http://nodejs.org/docs/latest/api/stream.html#stream_stream)
 * [notes on the stream api](http://maxogden.com/node-streams)
 * [why streams are awesome](http://blog.dump.ly/post/19819897856/why-node-js-streams-are-awesome)
+* [notes on event-stream](http://thlorenz.com/#/blog/post/event-stream)
 
 ## the future
 
