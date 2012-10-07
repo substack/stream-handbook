@@ -340,8 +340,20 @@ c.pipe(d);
 ```
 
 The stream implementation in core is just an event emitter with a pipe function.
-`pipe()` is pretty short. You should read
-[the source code](https://github.com/joyent/node/blob/master/lib/stream.js).
+`pipe()` is pretty short. 
+
+### short summary of interactions
+
+Assuming `src` is `readable` and `dst` is `writable` and we `src.pipe(dst)`, they interact as follows:
+
+- `src.emit('data', data)` -> `dst.write(data)`
+- if `dst.write(data)` returns `false`, then `src.pause()` is called if it is implemented
+- `src.emit('end')`   -> `dst.end()`     (at most once)
+- `src.emit('close')` -> `dst.destroy()` (at most once)
+- `dst.emit('drain')` -> `src.resume()` 
+
+You should read [the source code](https://github.com/joyent/node/blob/master/lib/stream.js) in order to get a more
+detailed understanding.
 
 ## terms
 
