@@ -183,6 +183,7 @@ event.
 
 This simple readable stream emits one `'data'` event per second for 5 seconds,
 then it ends. The data is piped to stdout so we can watch the results as they
+happen.
 
 ``` js
 var Stream = require('stream');
