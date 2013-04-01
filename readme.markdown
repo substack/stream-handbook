@@ -530,6 +530,8 @@ $ curl -X POST -d 'beep=boop&dinosaur=trex' http://localhost:5005
 
 ## [auth-stream](https://github.com/Raynos/auth-stream)
 
+## [ordered-through](https://github.com/juliangruber/ordered-through)
+
 ***
 
 # meta streams
