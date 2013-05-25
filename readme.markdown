@@ -764,7 +764,7 @@ incrementally as it arrives.
 
 # html streams
 
-## [hyperstream](https://github.com/substack/hypersream)
+## [hyperstream](https://github.com/substack/hyperstream)
 
 
 # audio streams
