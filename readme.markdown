@@ -409,7 +409,7 @@ src.pipe(writableStream)
 
 ### creating a writable stream
 
-Just define a `._write(chunk, enc, next)` function and then you can pipe a a
+Just define a `._write(chunk, enc, next)` function and then you can pipe a
 readable stream in:
 
 ``` js
