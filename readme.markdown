@@ -1172,6 +1172,7 @@ for control alongside some bulk data streams.
 
 ## [stream-spec](https://github.com/dominictarr/stream-spec)
 
+## [random-stream](https://github.com/bpostlethwaite/random-stream)
 ***
 
 # power combos
