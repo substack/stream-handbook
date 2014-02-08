@@ -26,7 +26,7 @@ In unix, streams are implemented by the shell with `|` pipes.
 In node, the built-in
 [stream module](http://nodejs.org/docs/latest/api/stream.html)
 is used by the core libraries and can also be used by user-space modules.
--Similar to unix, the node stream module's primary composition operator is called
+Similar to unix, the node stream module's primary composition operator is called
 `.pipe()` and you get a backpressure mechanism for free to throttle writes for
 slow consumers.
 
