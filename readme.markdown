@@ -137,7 +137,7 @@ Don't forget to listen `'error'` event if you want to catch it
 ``` js
 var server = http.createServer(function (req, res) {
     var stream = fs.createReadStream(__dirname + '/data.txt');
-    stream.pipe(oppressor(req)).pipe(res);
+    stream.pipe(res);
     stream.on('error', function(err){
         res.statusCode = 500;
         res.end('Internal Server Error');
