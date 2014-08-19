@@ -538,7 +538,7 @@ You cut me off!
 
 The first argument `chunk` is the chunk of data provided by the input stream for processing.
 
-The second argument `end` is the encoding type of the incoming string, if applicable.
+The second argument `enc` is the encoding type of the incoming string, if applicable.
 
 The third argument `next(err)` should be called when you are done processing the incoming chunk and are ready for more.
 
