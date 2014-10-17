@@ -151,7 +151,7 @@ All the different types of streams use `.pipe()` to pair inputs with outputs.
 `.pipe()` is just a function that takes a readable source stream `src` and hooks
 the output to a destination writable stream `dst`:
 
-```
+``` js
 src.pipe(dst)
 ```
 
@@ -252,7 +252,7 @@ that approach doesn't lend itself very well to comprehensible examples.
 To show that our `_read` function is only being called when the consumer
 requests, we can modify our readable stream code slightly to add a delay:
 
-```
+``` js
 var Readable = require('stream').Readable;
 var rs = Readable();
 
@@ -364,7 +364,7 @@ process.stdin.on('readable', function () {
 
 Now our code works as expected in 3-byte chunks!
 
-``` js
+```
 $ (echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume2.js 
 <Buffer 61 62 63>
 <Buffer 0a 64 65>
@@ -947,7 +947,7 @@ zeroed.
 
 Once we get the server and some clients running we should see a sequence like this:
 
-```
+``` js
 count = 183
 count = 184
 count = 185
@@ -959,7 +959,7 @@ count = 189
 
 Occasionally on some of the nodes we might see a sequence with repeated values like:
 
-```
+``` js
 count = 147
 count = 148
 count = 149
