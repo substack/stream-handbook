@@ -499,12 +499,51 @@ If you want to wait for the buffer to empty again, listen for a `'drain'` event.
 
 ## transform
 
-Transform streams are
+Transform streams are readable/writable streams that are used to transform their input into a desired form of output.
 
 You might also hear transform streams referred to as "through streams".
 
-Through streams are simple readable/writable filters that transform input and
-produce output.
+``` js
+a.pipe(transformStream).pipe(b);
+```
+
+Transform streams are one-way, requiring a read before a write.
+
+### creating a transform stream
+Transform streams require a `._transform(chunk, enc, next)` function. For example, to make a simple transform stream that capitalizes text passed to it, you would write:
+
+```js
+var Transform = require('stream').Transform;
+
+var ts = Transform();
+ts._transform = function(chunk, enc, next) {
+  var data = chunk.toString();
+  data = data.toUpperCase();
+  this.push(data); // send the transformed data on its way
+  next();
+}
+
+process.on('exit', function() {
+  console.error('\nYou cut me off!');
+});
+process.stdout.on('error', process.exit);
+
+process.stdin.pipe(ts).pipe(process.stdout);
+```
+
+```
+$ (echo hello world this is a test) | node transform0.js | head -c11
+HELLO WORLD
+You cut me off!
+```
+
+The first argument `chunk` is the chunk of data provided by the input stream for processing.
+
+The second argument `enc` is the encoding type of the incoming string, if applicable.
+
+The third argument `next(err)` should be called when you are done processing the incoming chunk and are ready for more.
+
+Optionally transform streams can also be given a `._flush(chunk, enc, next)` function. This function is called after all of the input chunks have been read, but before the final `end` signal is emitted signalling that the transform is complete.
 
 ## duplex
 
