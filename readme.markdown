@@ -729,6 +729,65 @@ until the `'connect'` event fires.
 ## [from](https://github.com/dominictarr/from)
 
 ## [pause-stream](https://github.com/dominictarr/pause-stream)
+## [pipe-io](https://github.com/coderaiser/pipe-io)
+
+Create pipe between streams and adds callback wich would 
+be called once whenever everything is done, or error occures.
+
+Pipes is a great and very fast way to connect a couple
+streams with each other, but error handling could be
+very annoying. If you forget to handle error on one of them
+your application would just crash with no call stask.
+
+Here is example of creating a `pipe` between two files with
+all cases taken into account. One would be read and second written.
+
+```js
+var fs      = require('fs'),
+    read    = fs.createReadStream('README.md'),
+    write   = fs.createWriteStream('README2.md'),
+
+    open    = function(msg) {
+        read.pipe(write);
+    },
+    finish  = function() {
+        console.log('done');
+        done();
+    },
+    error   = function(e) {
+        e && console.error(e.message);
+        done();
+    },
+
+    done    = function() {
+        read.removeListener('error', error);
+        write.removeListener('error', error);
+        write.removeListener('open', open);
+        write.removeListener('finish', finish);
+    }
+
+read.on('error', e);
+write.on('error', e);
+
+write.on('open', open);
+write.on('finish', finish);
+```
+`pipe-io` helps write less code with same stability:
+
+```js
+var fs      = require('fs'),
+    pipe    = require('pipe-io'),
+    read    = fs.createReadStream('README.md'),
+    write   = fs.createWriteStream('README2.md'),
+    error   = function(e) {
+        e && console.error(e.message);
+        return e;
+    }
+
+pipe([read, write], function(e) {
+    error(e) || console.log('done');
+});
+```
 
 ## [concat-stream](https://github.com/maxogden/node-concat-stream)
 
