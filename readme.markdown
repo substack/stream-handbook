@@ -706,9 +706,22 @@ until the `'connect'` event fires.
 
 ## http
 
+### http.createServer()
+
+Create a new instance of `http.server`. Can create with optional callback 
+function, `http.createServer([requestListener])`, which is called with every
+new client request. The `http.server` object created is an 
+[EventEmitter](https://nodejs.org/api/events.html#events_class_events_eventemitter),
+This means bew request handlers can be bound to an existing server object using
+`.on()`.
+
 ### http.request()
 
-### http.createServer()
+Returns an instance of the writable stream `ClientRequest`. May be passed with
+an optional callback. This callback will be used as a one time listener for the
+[`response`](https://nodejs.org/api/http.html#http_event_response) event.
+
+`http.request()` must be explicitly ended with a call to `req.end()`.
 
 ## zlib
 
