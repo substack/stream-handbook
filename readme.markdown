@@ -253,7 +253,7 @@ that approach doesn't lend itself very well to comprehensible examples.
 To show that our `_read` function is only being called when the consumer
 requests, we can modify our readable stream code slightly to add a delay:
 
-```
+```js
 var Readable = require('stream').Readable;
 var rs = Readable();
 
