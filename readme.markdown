@@ -1,7 +1,7 @@
 # stream-handbook
 
 This document covers the basics of how to write [node.js](http://nodejs.org/)
-programs with [streams](http://nodejs.org/docs/latest/api/stream.html).     
+programs with [streams](http://nodejs.org/docs/latest/api/stream.html).
 You also could read a **[chinese edition](https://github.com/jabez128/stream-handbook)**
 
 [![cc-by-3.0](http://i.creativecommons.org/l/by/3.0/80x15.png)](http://creativecommons.org/licenses/by/3.0/)
@@ -261,7 +261,7 @@ var c = 97 - 1;
 
 rs._read = function () {
     if (c >= 'z'.charCodeAt(0)) return rs.push(null);
-    
+
     setTimeout(function () {
         rs.push(String.fromCharCode(++c));
     }, 100);
@@ -316,7 +316,7 @@ process.stdin.on('readable', function () {
 ```
 
 ```
-$ (echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume0.js 
+$ (echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume0.js
 <Buffer 61 62 63 0a>
 <Buffer 64 65 66 0a>
 <Buffer 67 68 69 0a>
@@ -345,7 +345,7 @@ process.stdin.on('readable', function () {
 Running this example gives us incomplete data!
 
 ```
-$ (echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume1.js 
+$ (echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume1.js
 <Buffer 61 62 63>
 <Buffer 0a 64 65>
 <Buffer 66 0a 67>
@@ -366,7 +366,7 @@ process.stdin.on('readable', function () {
 Now our code works as expected in 3-byte chunks!
 
 ``` js
-$ (echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume2.js 
+$ (echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume2.js
 <Buffer 61 62 63>
 <Buffer 0a 64 65>
 <Buffer 66 0a 67>
@@ -399,7 +399,7 @@ process.stdin.on('readable', function () {
 ```
 
 ```
-$ tail -n +50000 /usr/share/dict/american-english | head -n10 | node lines.js 
+$ tail -n +50000 /usr/share/dict/american-english | head -n10 | node lines.js
 'hearties'
 'heartiest'
 'heartily'
@@ -441,7 +441,7 @@ process.stdin.pipe(ws);
 ```
 
 ```
-$ (echo beep; sleep 1; echo boop) | node write0.js 
+$ (echo beep; sleep 1; echo boop) | node write0.js
 <Buffer 62 65 65 70 0a>
 <Buffer 62 6f 6f 70 0a>
 ```
@@ -486,7 +486,7 @@ setTimeout(function () {
 ```
 
 ```
-$ node writing1.js 
+$ node writing1.js
 $ cat message.txt
 beep boop
 ```
@@ -577,7 +577,7 @@ process.stdin.on('end', function () {
 ```
 
 ```
-$ (echo beep; sleep 1; echo boop) | node classic1.js 
+$ (echo beep; sleep 1; echo boop) | node classic1.js
 <Buffer 62 65 65 70 0a>
 <Buffer 62 6f 6f 70 0a>
 __END__
@@ -606,7 +606,7 @@ function end () {
 ```
 
 ```
-$ (echo beep; sleep 1; echo boop) | node through.js 
+$ (echo beep; sleep 1; echo boop) | node through.js
 <Buffer 62 65 65 70 0a>
 <Buffer 62 6f 6f 70 0a>
 __END__
@@ -623,7 +623,7 @@ process.stdin.pipe(concat(function (body) {
 ```
 
 ```
-$ echo '{"beep":"boop"}' | node concat.js 
+$ echo '{"beep":"boop"}' | node concat.js
 { beep: 'boop' }
 ```
 
@@ -933,7 +933,7 @@ m.on('update', function cb (key) {
     // wait until we've gotten at least one count value from the network
     if (key !== 'count') return;
     m.removeListener('update', cb);
-    
+
     setInterval(function () {
         m.set('count', Number(m.get('count')) + 1);
     }, 100);
@@ -1267,7 +1267,7 @@ sock.install(server, '/sock');
 ```
 
 Meanwhile on the browser side of things just parse the json shoe stream and pass
-the resulting object stream to `eventStream()`. `eventStream()` just returns an
+the resulting object stream to `emitStream()`. `emitStream()` just returns an
 event emitter that emits the server-side events:
 
 ``` js
@@ -1349,7 +1349,7 @@ module.exports = function () {
     return through(function (line) {
         try { var row = JSON.parse(line) }
         catch (err) { return this.emit('error', err) }
-        
+
         this.queue(hyperglue(html, {
             '.who': row.who,
             '.message': row.message
