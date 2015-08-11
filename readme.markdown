@@ -782,6 +782,8 @@ $ curl -X POST -d 'beep=boop&dinosaur=trex' http://localhost:5005
 
 ## [duplexer](https://github.com/Raynos/duplexer)
 
+## [duplexer2](https://github.com/deoxxa/duplexer2)
+
 ## [emit-stream](https://github.com/substack/emit-stream)
 
 ## [invert-stream](https://github.com/dominictarr/invert-stream)
@@ -795,6 +797,12 @@ $ curl -X POST -d 'beep=boop&dinosaur=trex' http://localhost:5005
 ## [event-stream](https://github.com/dominictarr/event-stream)
 
 ## [auth-stream](https://github.com/Raynos/auth-stream)
+
+## [fork-stream](https://github.com/deoxxa/fork-stream)
+
+## [combine-stream](https://github.com/deoxxa/combine-stream)
+
+## [ternary-stream](https://github.com/robrich/ternary-stream)
 
 ***
 
