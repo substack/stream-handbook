@@ -688,9 +688,15 @@ This writable stream contains the standard system error stream for your program.
 
 ## fs
 
-### fs.createReadStream()
+### [fs.createReadStream()](http://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options)
 
-### fs.createWriteStream()
+This function returns a readable stream from a file descriptor (e.g. a file or pipe). You can configure the stream to
+use different encodings and read parts of the file by setting start and end offsets.
+
+### [fs.createWriteStream()](http://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options)
+
+This function returns a writable stream to a file descriptor. There are similar options if you want to append
+to a file rather than overwrite it etc.
 
 ## net
 
