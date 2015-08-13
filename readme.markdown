@@ -107,7 +107,7 @@ var server = http.createServer(function (req, res) {
 server.listen(8000);
 ```
 
-Here `.pipe()` takes care of listening for `'data'` and `'end'` events from the
+Here `.pipe()` takes care of listening for `'data'`, `'error'` and `'end'` events from the
 `fs.createReadStream()`. This code is not only cleaner, but now the `data.txt`
 file will be written to clients one chunk at a time immediately as they are
 received from the disk.
@@ -133,6 +133,18 @@ server.listen(8000);
 Now our file is compressed for browsers that support gzip or deflate! We can
 just let [oppressor](https://github.com/substack/oppressor) handle all that
 content-encoding stuff.
+
+Don't forget to listen `'error'` event if you want to catch it
+``` js
+var server = http.createServer(function (req, res) {
+    var stream = fs.createReadStream(__dirname + '/data.txt');
+    stream.pipe(res);
+    stream.on('error', function(err){
+        res.statusCode = 500;
+        res.end('Internal Server Error');
+    });
+});
+```
 
 Once you learn the stream api, you can just snap together these streaming
 modules like lego bricks or garden hoses instead of having to remember how to push
