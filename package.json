@@ -4,9 +4,9 @@
   "description": "how to write node programs with streams",
   "repository": {
     "type": "git",
-    "url": "git://github.com/substack/browserify-handbook.git"
+    "url": "git://github.com/substack/stream-handbook.git"
   },
-  "homepage": "https://github.com/substack/browserify-handbook",
+  "homepage": "https://github.com/substack/stream-handbook",
   "keywords": [
     "documentation",
     "guide",
