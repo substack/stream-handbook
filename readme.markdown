@@ -109,8 +109,8 @@ server.listen(8000);
 
 Here `.pipe()` takes care of listening for `'data'` and `'end'` events from the
 `fs.createReadStream()`. This code is not only cleaner, but now the `data.txt`
-file will be written to clients one chunk at a time immediately as they are
-received from the disk.
+file will be written to clients one chunk at a time immediately as each chunk
+is received from the disk.
 
 Using `.pipe()` has other benefits too, like handling backpressure automatically
 so that node won't buffer chunks into memory needlessly when the remote client
