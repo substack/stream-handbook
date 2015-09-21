@@ -1,7 +1,7 @@
 # stream-handbook
 
-This document covers the basics of how to write [node.js](http://nodejs.org/)
-programs with [streams](http://nodejs.org/docs/latest/api/stream.html).     
+This document covers the basics of how to write [node.js](https://nodejs.org/)
+programs with [streams](https://nodejs.org/docs/latest/api/stream.html).     
 You also could read a **[chinese edition](https://github.com/jabez128/stream-handbook)**
 
 [![cc-by-3.0](http://i.creativecommons.org/l/by/3.0/80x15.png)](http://creativecommons.org/licenses/by/3.0/)
@@ -39,7 +39,7 @@ systems out of small components that
 [do one thing well](http://www.faqs.org/docs/artu/ch01s06.html).
 In unix, streams are implemented by the shell with `|` pipes.
 In node, the built-in
-[stream module](http://nodejs.org/docs/latest/api/stream.html)
+[stream module](https://nodejs.org/docs/latest/api/stream.html)
 is used by the core libraries and can also be used by user-space modules.
 Similar to unix, the node stream module's primary composition operator is called
 `.pipe()` and you get a backpressure mechanism for free to throttle writes for
@@ -644,7 +644,7 @@ expectations.
 
 ## read more
 
-* [core stream documentation](http://nodejs.org/docs/latest/api/stream.html#stream_stream)
+* [core stream documentation](https://nodejs.org/docs/latest/api/stream.html#stream_stream)
 * You can use the [readable-stream](https://npmjs.org/package/readable-stream)
 module to make your streams2 code compliant with node 0.8 and below. Just
 `require('readable-stream')` instead of `require('stream')` after you
@@ -658,7 +658,7 @@ These streams are built into node itself.
 
 ## process
 
-### [process.stdin](http://nodejs.org/docs/latest/api/process.html#process_process_stdin)
+### [process.stdin](https://nodejs.org/docs/latest/api/process.html#process_process_stdin)
 
 This readable stream contains the standard system input stream for your program.
 
@@ -667,18 +667,18 @@ called implicitly on the
 [next tick](https://nodejs.org/docs/latest/api/process.html#process_process_nexttick_callback_arg).
 
 If process.stdin is a tty (check with
-[`tty.isatty()`](http://nodejs.org/docs/latest/api/tty.html#tty_tty_isatty_fd))
+[`tty.isatty()`](https://nodejs.org/docs/latest/api/tty.html#tty_tty_isatty_fd))
 then input events will be line-buffered. You can turn off line-buffering by
 calling `process.stdin.setRawMode(true)` BUT the default handlers for key
 combinations such as `^C` and `^D` will be removed.
 
-### [process.stdout](http://nodejs.org/api/process.html#process_process_stdout)
+### [process.stdout](https://nodejs.org/api/process.html#process_process_stdout)
 
 This writable stream contains the standard system output stream for your program.
 
 `write` to it if you want to send data to stdout
 
-### [process.stderr](http://nodejs.org/api/process.html#process_process_stderr)
+### [process.stderr](https://nodejs.org/api/process.html#process_process_stderr)
 
 This writable stream contains the standard system error stream for your program.
 
