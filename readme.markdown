@@ -664,7 +664,7 @@ This readable stream contains the standard system input stream for your program.
 
 It is paused by default but the first time you refer to it `.resume()` will be
 called implicitly on the
-[next tick](http://nodejs.org/docs/latest/api/process.html#process_process_nexttick_callback).
+[next tick](https://nodejs.org/docs/latest/api/process.html#process_process_nexttick_callback_arg).
 
 If process.stdin is a tty (check with
 [`tty.isatty()`](http://nodejs.org/docs/latest/api/tty.html#tty_tty_isatty_fd))
@@ -694,7 +694,7 @@ This writable stream contains the standard system error stream for your program.
 
 ## net
 
-### [net.connect()](http://nodejs.org/docs/latest/api/net.html#net_net_connect_options_connectionlistener)
+### [net.connect()](https://nodejs.org/docs/latest/api/net.html#net_net_connect_options_connectlistener)
 
 This function returns a [duplex stream] that connects over tcp to a remote
 host.
