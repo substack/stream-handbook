@@ -1197,6 +1197,10 @@ for control alongside some bulk data streams.
 
 # power combos
 
+## mississippi
+
+The [`mississippi` stream utility collection](https://github.com/maxogden/mississippi) demonstrates how to write better steam code using the modules [`pump`](https://npmjs.org/pump), [`stream-each`](https://npmjs.org/stream-each), [`pumpify`](https://npmjs.org/pumpify), [`duplexify`](https://npmjs.org/duplexify), [`through2`](https://npmjs.org/through2), [`concat-stream`](https://npmjs.org/concat-stream) and [`end-of-stream`](https://npmjs.org/end-of-stream).
+
 ## distributed partition-tolerant chat
 
 The [append-only](http://github.com/Raynos/append-only) module can give us a
