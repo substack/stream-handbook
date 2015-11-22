@@ -812,6 +812,8 @@ $ curl -X POST -d 'beep=boop&dinosaur=trex' http://localhost:5005
 
 ## [crdt](https://github.com/dominictarr/crdt)
 
+## [fsm-flow](https://github.com/ccortezia/fsm-flow)
+
 ## [delta-stream](https://github.com/Raynos/delta-stream)
 
 ## [scuttlebutt](https://github.com/dominictarr/scuttlebutt)
