@@ -394,7 +394,7 @@ process.stdin.on('readable', function () {
             return;
         }
     }
-    process.stdin.unshift(buf);
+    console.dir(buf.toString());
 });
 ```
 
