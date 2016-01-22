@@ -20,13 +20,11 @@ presently doing.
 
 # introduction
 
-```
-"We should have some ways of connecting programs like garden hose--screw in
-another segment when it becomes necessary to massage data in
-another way. This is the way of IO also."
-```
+> "We should have some ways of connecting programs like garden hose--screw in
+> another segment when it becomes necessary to massage data in
+> another way. This is the way of IO also."
 
-[Doug McIlroy. October 11, 1964](http://cm.bell-labs.com/who/dmr/mdmpipe.html)
+[Doug McIlroy. October 11, 1964](https://www.bell-labs.com/usr/dmr/www/mdmpipe.html)
 
 ![doug mcilroy](http://substack.net/images/mcilroy.png)
 
