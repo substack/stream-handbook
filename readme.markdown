@@ -646,7 +646,7 @@ expectations.
 
 * [core stream documentation](http://nodejs.org/docs/latest/api/stream.html#stream_stream)
 * You can use the [readable-stream](https://npmjs.org/package/readable-stream)
-module to make your streams code compliant with node 0.8 and below. Just
+module to make your streams3 code compliant with node 0.8 and below. Just
 `require('readable-stream')` instead of `require('stream')` after you
 `npm install readable-stream`.
 
