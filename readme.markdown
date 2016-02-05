@@ -584,7 +584,7 @@ __END__
 ```
 
 Note that whenever you register a `"data"` listener, you put the stream into
-compatability mode so you lose the benefits of the new streams2 api.
+compatibility mode so you lose the benefits of the new streams2 api.
 
 You should pretty much never register `"data"` and `"end"` handlers yourself
 anymore. If you need to interact with legacy streams, use libraries that you can
@@ -646,7 +646,7 @@ expectations.
 
 * [core stream documentation](http://nodejs.org/docs/latest/api/stream.html#stream_stream)
 * You can use the [readable-stream](https://npmjs.org/package/readable-stream)
-module to make your streams2 code compliant with node 0.8 and below. Just
+module to make your streams3 code compliant with node 0.8 and below. Just
 `require('readable-stream')` instead of `require('stream')` after you
 `npm install readable-stream`.
 
@@ -976,7 +976,7 @@ These values are due to
 history-based conflict resolution algorithm which is hard at work ensuring that the state of the system across all nodes is eventually consistent.
 
 Note that the server in this example is just another node with the same
-privledges as the clients connected to it. The terms "client" and "server" here
+privileges as the clients connected to it. The terms "client" and "server" here
 don't affect how the state synchronization proceeds, just who initiates the
 connection. Protocols with this property are often called symmetric protocols.
 See [dnode](https://github.com/substack/dnode) for another example of a
