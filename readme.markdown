@@ -6,7 +6,7 @@ You also could read a **[chinese edition](https://github.com/jabez128/stream-han
 
 [![cc-by-3.0](http://i.creativecommons.org/l/by/3.0/80x15.png)](http://creativecommons.org/licenses/by/3.0/)
 
-# node packaged manuscript
+# Node Packaged Manuscript
 
 You can install this handbook with npm. Just do:
 
