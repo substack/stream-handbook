@@ -1,12 +1,12 @@
-# stream-handbook
+# Stream-handbook
 
 This document covers the basics of how to write [node.js](http://nodejs.org/)
 programs with [streams](http://nodejs.org/docs/latest/api/stream.html).     
-You also could read a **[chinese edition](https://github.com/jabez128/stream-handbook)**
+You also could read a **[chinese edition](https://github.com/jabez128/stream-handbook)**.
 
 [![cc-by-3.0](http://i.creativecommons.org/l/by/3.0/80x15.png)](http://creativecommons.org/licenses/by/3.0/)
 
-# node packaged manuscript
+# Node Packaged Manuscript
 
 You can install this handbook with npm. Just do:
 
@@ -18,7 +18,7 @@ Now you will have a `stream-handbook` command that will open this readme file in
 your `$PAGER`. Otherwise, you may continue reading this document as you are
 presently doing.
 
-# introduction
+# Introduction
 
 ```
 "We should have some ways of connecting programs like garden hose--screw in
@@ -65,7 +65,7 @@ is the enemy and to seek the best abstractions for the problem at hand.
 
 ***
 
-# why you should use streams
+# Why You Should Use Streams
 
 I/O in node is asynchronous, so interacting with the disk and network involves
 passing callbacks to functions. You might be tempted to write code that serves
@@ -140,12 +140,12 @@ data through wonky non-streaming custom APIs.
 
 Streams make programming in node simple, elegant, and composable.
 
-# basics
+# Basics
 
 There are 5 kinds of streams: readable, writable, transform, duplex, and
 "classic".
 
-## pipe
+## Pipe
 
 All the different types of streams use `.pipe()` to pair inputs with outputs.
 
@@ -179,7 +179,7 @@ a | b | c | d
 
 except in node instead of the shell!
 
-## readable streams
+## Readable Streams
 
 Readable streams produce data that can be fed into a writable, transform, or
 duplex stream by calling `.pipe()`:
@@ -188,7 +188,7 @@ duplex stream by calling `.pipe()`:
 readableStream.pipe(dst)
 ```
 
-### creating a readable stream
+### Creating a Readable Stream
 
 Let's make a readable stream!
 
@@ -300,7 +300,7 @@ If you want to create a readable stream that pushes arbitrary values instead of
 just strings and buffers, make sure to create your readable stream with
 `Readable({ objectMode: true })`.
 
-### consuming a readable stream
+### Consuming a Readable Stream
 
 Most of the time it's much easier to just pipe a readable stream into another
 kind of stream or a stream created with a module like
@@ -416,7 +416,7 @@ However, there are modules on npm such as
 [split](https://npmjs.org/package/split) that you should use instead of rolling
 your own line-parsing logic.
 
-## writable streams
+## Writable Streams
 
 A writable stream is a stream you can `.pipe()` to but not from:
 
@@ -424,7 +424,7 @@ A writable stream is a stream you can `.pipe()` to but not from:
 src.pipe(writableStream)
 ```
 
-### creating a writable stream
+### Creating a Writable Stream
 
 Just define a `._write(chunk, enc, next)` function and then you can pipe a
 readable stream in:
@@ -462,7 +462,7 @@ into `Buffer`s unless you create your writable stream with
 If the readable stream you're piping from writes objects, create your writable
 stream with `Writable({ objectMode: true })`.
 
-### writing to a writable stream
+### Writing to a Writable Stream
 
 To write to a writable stream, just call `.write(data)` with the `data` you want
 to write!
@@ -497,7 +497,7 @@ in the incoming buffer.
 
 If you want to wait for the buffer to empty again, listen for a `'drain'` event.
 
-## transform
+## Transform
 
 Transform streams are a certain type of duplex stream (both readable and writable).
 The distinction is that in Transform streams, the output is in some way calculated
@@ -508,7 +508,7 @@ You might also hear transform streams referred to as "through streams".
 Through streams are simple readable/writable filters that transform input and
 produce output.
 
-## duplex
+## Duplex
 
 Duplex streams are readable/writable and both ends of the stream engage
 in a two-way interaction, sending back and forth messages like a telephone. An
@@ -521,7 +521,7 @@ a.pipe(b).pipe(a)
 
 you're probably dealing with a duplex stream.
 
-## classic streams
+## Classic Streams
 
 Classic streams are the old interface that first appeared in node 0.4.
 You will probably encounter this style of stream for a long time so it's good to
@@ -530,7 +530,7 @@ know how they work.
 Whenever a stream has a `"data"` listener registered, it switches into
 `"classic"` mode and behaves according to the old API.
 
-### classic readable streams
+### Classic Readable Streams
 
 Classic readable streams are just event emitters that emit `"data"` events when
 they have data for their consumers and emit `"end"` events when they are done
@@ -633,7 +633,7 @@ pausing a stream, but this was merely advisory. If you are going to use
 [through](https://npmjs.org/package/through) to handle buffering instead of
 writing that yourself.
 
-### classic writable streams
+### Classic Writable Streams
 
 Classic writable streams are very simple. Just define `.write(buf)`, `.end(buf)`
 and `.destroy()`.
@@ -642,7 +642,7 @@ and `.destroy()`.
 to mean `stream.write(buf); stream.end()` and you shouldn't violate their
 expectations.
 
-## read more
+## Read More
 
 * [core stream documentation](http://nodejs.org/docs/latest/api/stream.html#stream_stream)
 * You can use the [readable-stream](https://npmjs.org/package/readable-stream)
@@ -652,11 +652,11 @@ module to make your streams2 code compliant with node 0.8 and below. Just
 
 ***
 
-# built-in streams
+# Built-in Streams
 
 These streams are built into node itself.
 
-## process
+## Process
 
 ### [process.stdin](http://nodejs.org/docs/latest/api/process.html#process_process_stdin)
 
@@ -722,7 +722,7 @@ until the `'connect'` event fires.
 
 ***
 
-# control streams
+# Control Streams
 
 ## [through](https://github.com/dominictarr/through)
 
