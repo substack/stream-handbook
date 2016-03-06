@@ -18,6 +18,39 @@ Now you will have a `stream-handbook` command that will open this readme file in
 your `$PAGER`. Otherwise, you may continue reading this document as you are
 presently doing.
 
+# table of contents
+
+- [introduction](#introduction)
+- [why you should use streams](#why-you-should-use-streams)
+- [basics](#basics)
+  - [pipe](#pipe)
+  - [readable streams](#readable-streams)
+  - [writable streams](#writable-streams)
+  - [transform](#transform)
+  - [duplex](#duplex)
+  - [classic streams](#classic-streams)
+  - [read more](#read-more)
+- [built-in streams](#built-in-streams)
+  - [process](#process)
+  - [child_process.spawn()](#child_processspawn)
+  - [fs](#fs)
+  - [net](#net)
+  - [http](#http)
+  - [zlib](#zlib)
+- [control streams](#control-streams)
+- [meta streams](#meta-streams)
+- [state streams](#state-streams)
+- [http streams](#http-streams)
+- [io streams](#io-streams)
+- [parser streams](#parser-streams)
+- [browser streams](#browser-streams)
+- [html streams](#html-streams)
+- [audio streams](#audio-streams)
+- [rpc streams](#rpc-streams)
+- [test streams](#test-streams)
+- [power combos](#power-combos)
+
+
 # introduction
 
 ```
