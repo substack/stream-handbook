@@ -1,4 +1,8 @@
 var concat = require('concat-stream');
-process.stdin.pipe(concat(function (body) {
-    console.dir(JSON.parse(body));
-}));
+
+var cs = concat(function (body) {
+    console.log(body.toUpperCase());
+});
+cs.write('beep ');
+cs.write('boop.');
+cs.end();
