@@ -152,7 +152,7 @@ All the different types of streams use `.pipe()` to pair inputs with outputs.
 `.pipe()` is just a function that takes a readable source stream `src` and hooks
 the output to a destination writable stream `dst`:
 
-```
+```js
 src.pipe(dst)
 ```
 
@@ -203,7 +203,7 @@ rs.push(null);
 rs.pipe(process.stdout);
 ```
 
-```
+```sh
 $ node read0.js
 beep boop
 ```
@@ -235,7 +235,7 @@ rs._read = function () {
 rs.pipe(process.stdout);
 ```
 
-```
+```sh
 $ node read1.js
 abcdefghijklmnopqrstuvwxyz
 ```
@@ -278,7 +278,7 @@ process.stdout.on('error', process.exit);
 Running this program we can see that `_read()` is only called 5 times when we
 only request 5 bytes of output:
 
-```
+```sh
 $ node read2.js | head -c5
 abcde
 _read() called 5 times
@@ -315,7 +315,7 @@ process.stdin.on('readable', function () {
 });
 ```
 
-```
+```sh
 $ (echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume0.js 
 <Buffer 61 62 63 0a>
 <Buffer 64 65 66 0a>
@@ -365,7 +365,7 @@ process.stdin.on('readable', function () {
 
 Now our code works as expected in 3-byte chunks!
 
-``` js
+```sh
 $ (echo abc; sleep 1; echo def; sleep 1; echo ghi) | node consume2.js 
 <Buffer 61 62 63>
 <Buffer 0a 64 65>
@@ -398,7 +398,7 @@ process.stdin.on('readable', function () {
 });
 ```
 
-```
+```sh
 $ tail -n +50000 /usr/share/dict/american-english | head -n10 | node lines.js 
 'hearties'
 'heartiest'
@@ -440,7 +440,7 @@ ws._write = function (chunk, enc, next) {
 process.stdin.pipe(ws);
 ```
 
-```
+```sh
 $ (echo beep; sleep 1; echo boop) | node write0.js 
 <Buffer 62 65 65 70 0a>
 <Buffer 62 6f 6f 70 0a>
@@ -485,7 +485,7 @@ setTimeout(function () {
 }, 1000);
 ```
 
-```
+```sh
 $ node writing1.js 
 $ cat message.txt
 beep boop
@@ -558,7 +558,7 @@ var iv = setInterval(function () {
 stream.pipe(process.stdout);
 ```
 
-```
+```sh
 $ node classic0.js
 ABCDEFGHIJ
 ```
@@ -567,7 +567,7 @@ To read from a classic readable stream, you register `"data"` and `"end"`
 listeners. Here's an example reading from `process.stdin` using the old readable
 stream style:
 
-``` js
+```sh
 process.stdin.on('data', function (buf) {
     console.log(buf);
 });
@@ -576,7 +576,7 @@ process.stdin.on('end', function () {
 });
 ```
 
-```
+```sh
 $ (echo beep; sleep 1; echo boop) | node classic1.js 
 <Buffer 62 65 65 70 0a>
 <Buffer 62 6f 6f 70 0a>
@@ -605,7 +605,7 @@ function end () {
 }
 ```
 
-```
+```sh
 $ (echo beep; sleep 1; echo boop) | node through.js 
 <Buffer 62 65 65 70 0a>
 <Buffer 62 6f 6f 70 0a>
@@ -622,7 +622,7 @@ process.stdin.pipe(concat(function (body) {
 }));
 ```
 
-```
+```sh
 $ echo '{"beep":"boop"}' | node concat.js 
 { beep: 'boop' }
 ```
@@ -751,7 +751,7 @@ cs.write('boop.');
 cs.end();
 ```
 
-```
+```sh
 $ node concat.js
 BEEP BOOP.
 ```
@@ -773,7 +773,7 @@ var server = http.createServer(function (req, res) {
 server.listen(5005);
 ```
 
-```
+```sh
 $ curl -X POST -d 'beep=boop&dinosaur=trex' http://localhost:5005
 {"beep":"boop","dinosaur":"trex"}
 ```
@@ -880,7 +880,7 @@ a <-> b <-> c
 Note that nodes `a` and `e` aren't directly connected, but when we run this
 script:
 
-```
+```sh
 $ node model.js
 x => 555 from 1347857300518
 ```
@@ -1099,7 +1099,7 @@ c.pipe(d).pipe(c);
 
 Fire up the server, then when you run the client you should see:
 
-```
+```sh
 $ node client.js
 beep => BOOP
 ```
@@ -1156,7 +1156,7 @@ c.pipe(d).pipe(c);
 
 After we spin up the server, when we run the client now we get:
 
-```
+```sh
 $ node client.js
 beep:10 => BOOOOOOOOOOP
 ```
@@ -1296,7 +1296,7 @@ Use [browserify](https://github.com/substack/node-browserify) to build this
 browser source code so that you can `require()` all these nifty modules
 browser-side:
 
-```
+```sh
 $ browserify main.js -o bundle.js
 ```
 
@@ -1437,27 +1437,27 @@ stream.pipe(render()).pipe(through(function (html) {
 Just compile with [browserify](http://browserify.org) and
 [brfs](http://github.com/substack/brfs):
 
-```
+```sh
 $ browserify -t brfs browser.js > static/bundle.js
 ```
 
 And that's it! Now we can populate `data.txt` with some silly data:
 
-```
+```sh
 $ echo '{"who":"substack","message":"beep boop."}' >> data.txt
 $ echo '{"who":"zoltar","message":"COWER PUNY HUMANS"}' >> data.txt
 ```
 
 then spin up the server:
 
-```
+```sh
 $ node server.js
 ```
 
 then navigate to `localhost:8000` where we will see our content. If we add some
 more content:
 
-```
+```sh
 $ echo '{"who":"substack","message":"oh hello."}' >> data.txt
 $ echo '{"who":"zoltar","message":"HEAR ME!"}' >> data.txt
 ```
