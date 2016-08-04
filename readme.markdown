@@ -812,8 +812,6 @@ $ curl -X POST -d 'beep=boop&dinosaur=trex' http://localhost:5005
 
 ## [crdt](https://github.com/dominictarr/crdt)
 
-## [delta-stream](https://github.com/Raynos/delta-stream)
-
 ## [scuttlebutt](https://github.com/dominictarr/scuttlebutt)
 
 [scuttlebutt](https://github.com/dominictarr/scuttlebutt) can be used for
@@ -1040,7 +1038,7 @@ incrementally as it arrives.
 
 ## [attribute](https://github.com/Raynos/attribute)
 
-## [data-bind](https://github.com/travis4all/data-bind)
+## [data-bind](https://github.com/Raynos/data-bind)
 
 ***
 
