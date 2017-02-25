@@ -196,6 +196,7 @@ Let's make a readable stream!
 var Readable = require('stream').Readable;
 
 var rs = new Readable;
+rs._read = function () {};
 rs.push('beep ');
 rs.push('boop\n');
 rs.push(null);
