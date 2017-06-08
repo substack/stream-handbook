@@ -1,7 +1,7 @@
 {
   "name": "stream-handbook",
   "version": "1.0.0",
-  "description": "how to write node programs with streams",
+  "description": "How to write node programs with streams.",
   "repository": {
     "type": "git",
     "url": "git://github.com/substack/browserify-handbook.git"
