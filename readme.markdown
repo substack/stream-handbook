@@ -55,7 +55,7 @@ You can then plug the output of one stream to the input of another and
 institute higher-level flow control.
 
 Streams are an important component of
-[small-program design](https://michaelochurch.wordpress.com/2012/08/15/what-is-spaghetti-code/)
+[small-program design](https://web.archive.org/web/20150910093715/https://michaelochurch.wordpress.com/2012/08/15/what-is-spaghetti-code/)
 and [unix philosophy](http://www.faqs.org/docs/artu/ch01s06.html)
 but there are many other important abstractions worth considering.
 Just remember that [technical debt](http://c2.com/cgi/wiki?TechnicalDebt)
