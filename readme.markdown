@@ -1,24 +1,24 @@
 # stream-handbook
 
-This document covers the basics of how to write [node.js](http://nodejs.org/)
-programs with [streams](http://nodejs.org/docs/latest/api/stream.html).     
-You also could read a **[chinese edition](https://github.com/jabez128/stream-handbook)**
+這份文說明 [node.js](http://nodejs.org/) [streams](http://nodejs.org/docs/latest/api/stream.html) 的基本使用方法 
+
+其他翻譯版本
+
+**[简体中文](https://github.com/jabez128/stream-handbook)**
 
 [![cc-by-3.0](http://i.creativecommons.org/l/by/3.0/80x15.png)](http://creativecommons.org/licenses/by/3.0/)
 
-# node packaged manuscript
+# node 套件指令
 
-You can install this handbook with npm. Just do:
+使用 `npm` 安裝英文版文件，輸入下列指令
 
 ```
 npm install -g stream-handbook
 ```
 
-Now you will have a `stream-handbook` command that will open this readme file in
-your `$PAGER`. Otherwise, you may continue reading this document as you are
-presently doing.
+現在你可以使用 `stream-handbook` 命令來開啟在 `$PAGER` 中的這份文件並且繼續閱讀這份文件
 
-# introduction
+# 簡介
 
 ```
 "We should have some ways of connecting programs like garden hose--screw in
@@ -65,7 +65,7 @@ is the enemy and to seek the best abstractions for the problem at hand.
 
 ***
 
-# why you should use streams
+# 為甚麼應該使用 streams
 
 I/O in node is asynchronous, so interacting with the disk and network involves
 passing callbacks to functions. You might be tempted to write code that serves
