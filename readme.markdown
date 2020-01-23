@@ -311,7 +311,7 @@ but occasionally it might be useful to consume a readable stream directly.
 ``` js
 process.stdin.on('readable', function () {
     var buf = process.stdin.read();
-    console.dir(buf);
+    console.log(buf);
 });
 ```
 
@@ -338,7 +338,7 @@ Here's an example of using `.read(n)` to buffer stdin into 3-byte chunks:
 ``` js
 process.stdin.on('readable', function () {
     var buf = process.stdin.read(3);
-    console.dir(buf);
+    console.log(buf);
 });
 ```
 
@@ -358,7 +358,7 @@ that we've already read. A simple `.read(0)` will do this:
 ``` js
 process.stdin.on('readable', function () {
     var buf = process.stdin.read(3);
-    console.dir(buf);
+    console.log(buf);
     process.stdin.read(0);
 });
 ```
@@ -433,7 +433,7 @@ readable stream in:
 var Writable = require('stream').Writable;
 var ws = Writable();
 ws._write = function (chunk, enc, next) {
-    console.dir(chunk);
+    console.log(chunk);
     next();
 };
 
